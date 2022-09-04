@@ -7,7 +7,7 @@ const bp = require('body-parser')
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 
-const port =4003
+const port =4003||process.env.PORT
 app.use('/',PersonsRouter)
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
